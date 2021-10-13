@@ -1,0 +1,5 @@
+SSH:   git@github.com:jian940/2021learning.git
+HTTPS:  https://github.com/jian940/2021learning.git
+
+git remote add origin
+git pull origin master

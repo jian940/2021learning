@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.cnblogs.com/schaepher/p/5561193.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin-when-crossorigin">
+    <meta name="description" content="原文链接： &amp;quot;Git和Github简单教程&amp;quot; 网络上关于Git和GitHub的教程不少，但是这些教程有的命令太少不够用，有的命令太多，使得初期学习的时候需要额外花不少时间在一些当前">
+    <meta property="og:description" content="原文链接： &amp;quot;Git和Github简单教程&amp;quot; 网络上关于Git和GitHub的教程不少，但是这些教程有的命令太少不够用，有的命令太多，使得初期学习的时候需要额外花不少时间在一些当前">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Git和Github简单教程 - schaepher - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="https://common.cnblogs.com/favicon.svg" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="./Git和Github简单教程 - schaepher - 博客园_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./Git和Github简单教程 - schaepher - 博客园_files/bundle-simplememory.min.css">
+    <link type="text/css" rel="stylesheet" href="./Git和Github简单教程 - schaepher - 博客园_files/cnblogs.css">
+    <link type="text/css" rel="stylesheet" href="./Git和Github简单教程 - schaepher - 博客园_files/custom.css">
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./Git和Github简单教程 - schaepher - 博客园_files/bundle-SimpleMemory-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/schaepher/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/schaepher/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/schaepher/wlwmanifest.xml">
+    <script async="" src="./Git和Github简单教程 - schaepher - 博客园_files/analytics.js.下载"></script><script>
+        var currentBlogId = 244067;
+        var currentBlogApp = 'schaepher';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+    </script>
+        <script>
+            var currentPostDateAdded = '2016-06-05 05:26';
+        </script>
+    <script src="./Git和Github简单教程 - schaepher - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./Git和Github简单教程 - schaepher - 博客园_files/blog-common.min.js.下载"></script><style type="text/css">.medium-zoom-overlay{position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;transition:opacity .3s;will-change:opacity}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{position:relative;cursor:pointer;cursor:zoom-out;will-change:transform}</style>
+    <script type="text/x-mathjax-config;executed=true">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="./Git和Github简单教程 - schaepher - 博客园_files/MathJax.js.下载"></script>
+    
+    <script type="text/javascript">
+        window.codeHighlightEngine = 1
+        window.enableCodeLineNumber = false
+    </script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="skin-simplememory no-navbar"><div id="MathJax_Message" style="display: none;"></div>
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="./Git和Github简单教程 - schaepher - 博客园_files/logo.svg" alt="博客园Logo"></a></li>
+                <li><a href="https://www.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-sitehome&#39;)">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-news&#39;)">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-q&#39;)">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-brands&#39;)">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-ing&#39;)">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;skin-navbar-edu&#39;)">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3">
+                        <button type="submit" id="zzk_search_button">
+                            <img src="./Git和Github简单教程 - schaepher - 博客园_files/search.svg" alt="搜索">
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔" style="display: none;">
+                        <img id="new_post_icon" class="navbar-icon" src="./Git和Github简单教程 - schaepher - 博客园_files/newpost.svg" alt="写随笔">
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客" style="display: none;">
+                        <img id="myblog_icon" class="navbar-icon" src="./Git和Github简单教程 - schaepher - 博客园_files/myblog.svg" alt="我的博客">
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息" style="display: none;">
+                        <img id="msg_icon" class="navbar-icon" src="./Git和Github简单教程 - schaepher - 博客园_files/message.svg" alt="短消息">
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown" style="display: none;">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="./Git和Github简单教程 - schaepher - 博客园_files/avatar-default.svg" alt="用户头像">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="./Git和Github简单教程 - schaepher - 博客园_files/lite-mode-check.svg" class="hide"><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/" style="display: inline;">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()" style="display: inline;">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/schaepher/"><img id="blogLogo" src="./Git和Github简单教程 - schaepher - 博客园_files/logo.gif" alt="返回主页"></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/schaepher/">Schaepher</a>
+</h1>
+<h2>深透理解，熟练运用；似懂非懂，其实不懂。</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/schaepher/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/schaepher">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/schaepher/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<span id="stats_post_count">随笔 - 108&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 277&nbsp; </span>
+<span id="stats-total-view-count">阅读 - 
+<span title="总阅读数: 348592">
+34万</span></span>
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/schaepher/p/5561193.html">
+    <span>Git和Github简单教程</span>
+    
+
+
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<p>原文链接：<a href="http://www.cnblogs.com/schaepher/p/5561193.html" target="_blank">Git和Github简单教程</a></p>
+<hr>
+<p>网络上关于Git和GitHub的教程不少，但是这些教程有的命令太少不够用，有的命令太多，使得初期学习的时候需要额外花不少时间在一些当前用不到的命令上。<br>
+这篇文章主要的目标是用较少的时间学习Git和GitHub的基本使用。在足够一般使用的前提下，尽量减少命令。<br>
+如果需要其他命令，到时候再去其他地方了解就行了。</p>
+<hr>
+<p>目录：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#what">零、Git是什么</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#function">一、Git的主要功能：版本控制</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#overview">二、概览</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#msysgit">三、Git for Windows软件安装</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#local">四、本地Git的使用</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#github">五、Github与Git的关联</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#team">六、团队合作开发</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#others">七、Github的其他介绍</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/p/5561193.html#problem">八、一些可能碰到的问题</a></li>
+</ul>
+<hr>
+<p><a name="what"></a></p>
+<h2 id="零、git是什么">零、Git是什么</h2>
+<p>我才不告诉你嘞</p>
+<hr>
+<p><a name="function"></a></p>
+<h2 id="一、git的主要功能：版本控制">一、Git的主要功能：版本控制</h2>
+<ol>
+<li>版本：<br>
+想想你平时用的软件，在软件升级之后，你用的就是新版本的软件。你应该见过这样的版本号：<code>v2.0</code> 或者 <code>1511</code>（表示发布时为15年11月），如下图：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213745539-478220006.png" alt="" loading="lazy"><br>
+那么如果你修改并保存了一个文件，从版本管理的角度来说，你得到的是这个文件的新版本。<br>
+可是很多情况下，这种修改是不可逆的。你修改完之后，无法回到你修改前的样子。为了避免这种情况，有的人会把新版本的内容保存到一个新的文件里面。<br>
+由于 Git 更多地用于代码管理，举个程序员的例子。比如以下是计算机专业学生的作业：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213816196-183384611.png" alt="" loading="lazy"><br>
+这样存储多个文件夹，可能会造成混乱。你可能想保存以前写的代码，因为它们可能在以后会用到。但是更多的时候是，你不知道各个文件夹都做了什么修改。<br>
+这时候你需要一款软件帮你管理版本，它就是Git。</li>
+<li>控制：<br>
+你可以用Git来对这些不同的版本进行控制。还可以很方便地查看两个不同版本之间的不同之处。<br>
+——使用Git，你只保存最新的一份文件就可以了。<br>
+——那我以前的文件怎么办？<br>
+——可以用Git的 reset 帮你把文件回退到你想要的版本。<br>
+——如果回去了，那我的最新版本呢？<br>
+——还可以用 reflog 和 reset 的组合来还原。</li>
+</ol>
+<hr>
+<p><a name="overview"></a></p>
+<h2 id="二、概览">二、概览</h2>
+<p>所有命令前都要加 <code>git</code>，如表中的<code>init</code>是指 <code>git init</code>。<br>
+点击命令可直接跳转至本文第一次使用的地方。<br>
+以下命令都在命令行里执行。</p>
+<h3 id="1个人本地使用">1.个人本地使用</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left">行为</th>
+<th style="text-align: left">命令</th>
+<th style="text-align: left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left">初始化</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#init">init</a></td>
+<td style="text-align: left">在本地的当前目录里初始化git仓库</td>
+</tr>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#clone">clone 地址</a></td>
+<td style="text-align: left">从网络上某个地址拷贝仓库(repository)到本地</td>
+</tr>
+<tr>
+<td style="text-align: left">查看当前状态</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#status">status</a></td>
+<td style="text-align: left">查看当前仓库的状态。碰到问题不知道怎么办的时候，可以通过看它给出的提示来解决问题。这个命令执行的频率应该是其他命令的几倍，特别是新手</td>
+</tr>
+<tr>
+<td style="text-align: left">查看不同</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#diff">diff</a></td>
+<td style="text-align: left">查看当前状态和最新的commit之间不同的地方</td>
+</tr>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left">diff 版本号1 版本号2</td>
+<td style="text-align: left">查看两个指定的版本之间不同的地方。这里的版本号指的是commit的hash值</td>
+</tr>
+<tr>
+<td style="text-align: left">添加文件</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#add">add -A</a></td>
+<td style="text-align: left">这算是相当通用的了。在commit之前要先add</td>
+</tr>
+<tr>
+<td style="text-align: left">撤回修改的且还未stage的内容</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#checkout">checkout -- .</a></td>
+<td style="text-align: left">这里用小数点表示撤回所有修改，在<code>--</code>的前后都有空格</td>
+</tr>
+<tr>
+<td style="text-align: left">提交</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#commit">commit -m "提交信息"</a></td>
+<td style="text-align: left">提交信息最好能体现更改了什么</td>
+</tr>
+<tr>
+<td style="text-align: left">删除未tracked</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#clean">clean -xf</a></td>
+<td style="text-align: left">删除当前目录下所有没有track过的文件。不管它是否是.gitignore文件里面指定的文件夹和文件</td>
+</tr>
+<tr>
+<td style="text-align: left">查看提交记录</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#log">log</a></td>
+<td style="text-align: left">查看当前版本及之前的commit记录</td>
+</tr>
+<tr>
+<td style="text-align: left"></td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#reflog">reflog</a></td>
+<td style="text-align: left">HEAD的变更记录</td>
+</tr>
+<tr>
+<td style="text-align: left">版本回退</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#reset">reset --hard 版本号</a></td>
+<td style="text-align: left">回退到指定版本号的版本，该版本之后的修改都被删除。同时也是通过这个命令回到最新版本。需要reflog配合</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="2个人使用远程仓库">2.个人使用远程仓库</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align: left">行为</th>
+<th style="text-align: left">命令</th>
+<th style="text-align: left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left">设置用户名</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#config_user">config --global user.name "你的用户名"</a></td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left">设置邮箱</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#config_email">config --global user.email "你的邮箱"</a></td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td style="text-align: left">生成ssh key</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#ssh_key">ssh-keygen -t rsa -C "你的邮箱"</a></td>
+<td style="text-align: left">这条命令前面不用加git</td>
+</tr>
+<tr>
+<td style="text-align: left">添加远程仓库</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#remote_add">remote add origin 你复制的地址</a></td>
+<td style="text-align: left">设置origin</td>
+</tr>
+<tr>
+<td style="text-align: left">上传并指定默认</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#push_origin">push -u origin master</a></td>
+<td style="text-align: left">指定origin为默认主机，以后push默认上传到origin上</td>
+</tr>
+<tr>
+<td style="text-align: left">提交到远程仓库</td>
+<td style="text-align: left"><a href="https://www.cnblogs.com/schaepher/p/5561193.html#push">push</a></td>
+<td style="text-align: left">将当前分支增加的commit提交到远程仓库</td>
+</tr>
+<tr>
+<td style="text-align: left">从远程仓库同步</td>
+<td style="text-align: left">pull</td>
+<td style="text-align: left">在本地版本低于远程仓库版本的时候，获取远程仓库的commit</td>
+</tr>
+</tbody>
+</table></div>
+<p>可以用一张图直观地看出以上主要的命令对仓库的影响。<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213832164-1203726937.png" alt="" loading="lazy" class="medium-zoom-image"><br>
+图片引用自：<a href="http://blog.podrezo.com/git-introduction-for-cvssvntfs-users/" target="_blank">Git introduction for CVS/SVN/TFS users</a></p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213850274-1309981476.jpg" alt="" loading="lazy" class="medium-zoom-image"><br>
+图片引用自：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank">工作区和暂存区 - 廖雪峰的官方网站</a> （做了点修改）</p>
+<p>对照查看两张图：</p>
+<ul>
+<li>workspace 即工作区，逻辑上是本地计算机，还没添加到repository的状态；</li>
+<li>staging 即版本库中的stage，是暂存区。修改已经添加进repository，但还没有作为commit提交，类似于缓存；</li>
+<li>Local repository 即版本库中master那个地方。到这一步才算是成功生成一个新版本；</li>
+<li>Remote repository 则是远程仓库。用来将本地仓库上传到网络，可以用于备份、共享、合作。本文将使用Github作为远程仓库的例子。</li>
+</ul>
+<hr>
+<p><a name="msysgit"></a></p>
+<h2 id="三、git-for-windows软件安装">三、Git for Windows软件安装</h2>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20161203000226318-877439216.png" alt="" loading="lazy"><br>
+Git for Windows（又msysgit）</p>
+<ul>
+<li>
+<p>安装包可以到官方网站<sup><a href="https://git-for-windows.github.io/" target="_blank"><code>[1]</code></a></sup>下载，或者在github<sup><a href="https://github.com/git-for-windows/git/releases" target="_blank"><code>[2]</code></a></sup>下载。如果下载不下来，可以把链接复制下来用迅雷下载。如果用迅雷下载不放心，在下载完后去在github下载的那个地方查看SHA-256值，并和下载的文件对比，如果值一样就可以放心使用。</p>
+</li>
+<li>
+<p>安装的时候一路点击<code>Next</code>就行了。</p>
+</li>
+<li>
+<p>刚安装完打开后，窗口比较小。如果不太习惯，可以把它改大一些。</p>
+<ol>
+<li>首先移到窗口右下角边缘，出现箭头后把窗口拉大。</li>
+<li>点击窗口顶部左边的图标 -&gt; Options... -&gt; Window -&gt; Current size -&gt; OK<br>
+这样以后打开窗口都会是调整后的大小。</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>Git for Windows从2.8.0版本<sup><a href="https://github.com/git-for-windows/git/releases/tag/v2.8.0.windows.1" title="查看2.8.0版本的Release Note" target="_blank"><code>[3]</code></a></sup>开始，默认添加环境变量，所以环境变量部分就不用再手动配置了。（这句可以无视）</p>
+</blockquote>
+<hr>
+<p><a name="local"></a></p>
+<h2 id="四、本地git的使用">四、本地Git的使用</h2>
+<blockquote>
+<p>这里先不引入Github，而是在本地计算机上的操作。</p>
+</blockquote>
+<p>打开命令行（cmd）或者在想要创建repository的地方右键鼠标并点击 <code>Git Bash Here</code> 打开窗口。</p>
+<h3 id="1新的仓库-》初始化">1.新的仓库-》初始化</h3>
+<p>运行 <a name="init"><code>git init</code></a> 来初始化仓库，如下图：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213940508-828815164.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>它会创建一个隐藏的文件夹 <code>.git</code> 这里不去管它是用来干嘛的。关闭windows的<code>显示隐藏的项目</code>吧。</p>
+<hr>
+<h3 id="2文件的添加和提交">2.文件的添加和提交</h3>
+<p>我在这个文件夹里面创建了一个 <code>today.txt</code> 的文件。并且不要脸地祝自己儿童节快乐：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604213956149-723619418.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这时我使用 <a name="status"><code>git status</code></a> 来查看有什么变化：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214005055-1866468380.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>它告诉我有一个还未追踪的文件，并提示我可以使用 <code>git add &lt;file&gt;...</code> 把它加进去。</p>
+<p>但是我并不打算把所有命令都介绍一遍，所以我选择使用上面概览时所提到的 <a name="add"><code>git add -A</code></a> 命令。</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214016508-253679176.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>嗯，什么提示都没有。没关系，我们再次使用 <code>git status</code> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214024992-260849170.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>状态变了！说明add成功。再看看它的提示 <code>Changes to be committed</code> ，也就是说现在可以执行commit了。下面一行则告诉你如何将文件从stage里移出，这里不管。<br>
+执行 <a name="commit"><code>git commit -m "提交信息"</code></a> 将文件提交到repository里。提交信息用英文的双引号括起来。</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214038492-1522093568.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这时运行 <a name="log"><code>git log</code></a> 就可以看到提交的记录了：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214048071-1516052651.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这样第一步就完成了。</p>
+<blockquote>
+<p>也许你会奇怪：为什么要有一个add，直接commit不就行了？这是因为stage有很多用处，具体可以去查找相关资料。这里就算不了解问题也不大。</p>
+</blockquote>
+<h3 id="3文件的修改">3.文件的修改</h3>
+<p>接着我修改文件内容。改成祝大家儿童节快乐好了 (～￣▽￣)～</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214108227-292232158.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>我们用 <code>git status</code> 看看有什么变化：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214116571-1026727305.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这和之前的提示不一样了。之前是这个：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214132992-1418825706.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>比较一下就会看到，之前的是添加新文件，当时文件还没被追踪（untracked），而这次是更改已经追踪（tracked）的文件。</p>
+<p>现在我们通过git看看文件做了哪些变化，执行 <a name="diff"><code>git diff</code></a> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214145649-1116632145.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>它默认跟最新的一个commit进行比较。<br>
+红色（前面有减号<code>-</code>）表示删除，绿色（前面有加号<code>+</code>）表示添加。<br>
+因此，在git看来，我们是删除了原来那一行，并添加了新的两行。这在文件内容特别多的时候效果比较明显。<br>
+这个命令在以下情况可以使用：</p>
+<ul>
+<li>你忘记改了什么，又想知道</li>
+<li>别人发给你新版本，你想知道更改了什么</li>
+</ul>
+<p>注：如果你用 windows 创建 txt 文件，并用自带文本编辑器来编辑文本，得到的编码是 GBK 。而 Git 读取文件时，使用 UTF-8 无 ROM 编码。因此会出现中文无法正常显示的情况。</p>
+<p>假如我现在想撤销这些更改，执行 <a name="checkout"><code>git checkout -- .</code></a> 就行了：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214206821-1921800298.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>恩，仍然没有任何提示。执行 <code>git status</code> 看看：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214215774-1596938603.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>上一个status的提示已经不见咯。再来看看文件：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214227930-813645920.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>果然复原了！那么再次进行修改：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214241102-284859029.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>接着：<br>
+<code>git add -A</code><br>
+<code>git commit -m "将[自己]改为[米娜桑]"</code></p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214257633-193132615.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>用 <code>git log</code> 看看提交（commit）记录：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214311758-175378236.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>嗯。现在有两个提交了。</p>
+<h3 id="4版本回退！">4.版本回退！</h3>
+<p>如果我写的是一篇很长的文章，并且在之前的版本基础上修改了一部分内容，生成一个新的commit，现在我发现我在修改的时候删掉了一部分内容，而这部分内容是我现在需要用到的，怎么办？版本回退！</p>
+<p>还是以刚才的文件为例，现在我试着将文件回退到第一个commit时的状态。但在这之前，我们看看这个文件夹里面的东西：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214321555-282676581.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p><code>.git</code> 文件夹因为本来就是隐藏的，我在关了 <code>显示隐藏的项目</code> 的选项后，它就不显示了。<br>
+现在看到的是只有一个文件，而且是最新的一个版本。</p>
+<blockquote>
+<p>文件的修改日期为 <code>2016\6\1 21:52</code></p>
+</blockquote>
+<p>从刚才的 <code>git log</code> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214311758-175378236.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>我们看到两行黄色部分是以 <code>commit</code> 开头的，后面接着一串字符。这一串字符是16进制的数，是一串哈希值。我们叫它版本号就行了。</p>
+<p>开始回退，执行 <a name="reset"><code>git reset --hard 1df0573</code></a> （取版本号前7位就可以了）：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604215412196-1252165674.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这里提示HEAD已经更改指向至1df0573了。此时文件：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214419821-1776623416.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>其内容：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214429133-794948365.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>已经回到我的第一个版本的状态。</p>
+<blockquote>
+<p>这里文件的修改日期被更改为我现在的时间 <code>2016\6\2 19:29</code><br>
+这是由于文件的修改日期是由windows修改的，因为它检测到这个文件被修改了。而我们刚才从最新版本回退到现在这个版本，就像是我们手动修改了文件内容一样，事实上是由git来完成的。<br>
+其实可以不管上面这一段</p>
+</blockquote>
+<p>现在再执行  <code>git log</code> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214442242-370029640.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>新版本的commit记录不见了！这就是 reset --hard 的力量，很好很强硬！</p>
+<p>现在已经看到了之前版本的内容，那么如何回到最新版呢？<br>
+先执行 <a name="reflog"><code>git reflog</code></a> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214451727-1120509429.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>可以看到HEAD的变化情况。<br>
+第一行表示当前HEAD所在的版本号是 <code>1df0573</code> ，而之所以在这个版本号，是由于我们执行了reset命令。<br>
+看第二行，它告诉我们，这个HEAD所在的版本号是 <code>ad93b89</code> ，这个版本号是在执行commit之后形成的。</p>
+<p>此时我再用一次reset，将HEAD指向 <code>ad93b89</code> ， 同时查看log ：</p>
+<pre><code class="hljs sql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard ad93b89</span>
+git <span class="hljs-keyword">log</span>
+</code></pre>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214514571-1686368650.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>回到第一次reset前的状态了！</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214526321-588410549.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<h3 id="5清除未追踪的文件">5.清除未追踪的文件</h3>
+<p>通常在reset或者pull（后面会讲）之前要做两件事：</p>
+<ul>
+<li>将新添加且为追踪的文件删除掉（比如编译程序后所产生的文件）</li>
+<li>已追踪的文件已有修改，但又不需要这些修改，则将它们还原</li>
+</ul>
+<p>还原已做修改的tracked文件，上面已经讲过。<br>
+现在看看如何用命令删除新加的文件。</p>
+<p>首先我手动创建个文件，用来演示：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214540008-1448402387.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>用checkout是没办法删除掉它的，使用 <a name="clean"><code>git clean -xf</code></a> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214601305-1764138916.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>这个命令的杀伤力比较大，它删除当前目录下所有没有track过的文件。不管它是否是.gitignore文件里面指定的文件夹和文件。当然，也有杀伤力比较小的，但这里就不介绍了。</p>
+<h3 id="6关于git-status中文乱码问题">6.关于git status中文乱码问题</h3>
+<p>如果你的文件名是中文的，在使用<code>git status</code>时会乱码。如下图所示：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20170113144122025-2131985383.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>如果要使它显示为中文，在命令行里执行：<code>git config --global core.quotepath false</code>。<br>
+再使用 <code>git status</code>：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20170113144614463-158907487.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>如果 <code>git log</code> 也会乱码，执行以下命令：</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">git</span> config --global i<span class="hljs-number">18</span>n.commitencoding utf-<span class="hljs-number">8</span>
+<span class="hljs-attribute">git</span> config --global i<span class="hljs-number">18</span>n.logoutputencoding utf-<span class="hljs-number">8</span>
+</code></pre>
+<p>请根据需要将后面的 utf-8 替换成你想要的编码。如果是团队项目，请确保所有成员的设置都一致。</p>
+<hr>
+<p><a name="github"></a></p>
+<h2 id="五、github与git的关联">五、Github与Git的关联</h2>
+<p>上面的操作都是在本地计算机上产生影响的，一般也够用了。<br>
+如果你是程序员，想和其他人分享你的代码，或者合作开发，可以用Github。</p>
+<h3 id="1）本地git和github的连接">1）本地Git和Github的连接</h3>
+<ol>
+<li>
+<p>到Github<sup><a href="https://github.com/join?source=header" target="_blank"><code>[4]</code></a></sup>注册账号。</p>
+</li>
+<li>
+<p>本地配置用户名和邮箱（如果已经设置好，跳过该步）：</p>
+<ul>
+<li><a name="config_user"><code>git config --global user.name "你的用户名"</code></a><br>
+<a name="config_email"><code>git config --global user.email "你的邮箱"</code></a><br>
+如图所示：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214615274-442852618.png" alt="" loading="lazy" class="medium-zoom-image"></li>
+<li>或者你直接在config文件里改，位置在 <code>C:\Users\你的用户名\.gitconfig</code> 。如下图所示，添加相应信息：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214628289-1147405553.png" alt="" loading="lazy" class="medium-zoom-image"></li>
+</ul>
+</li>
+<li>
+<p>生成ssh key<br>
+运行 <a name="ssh_key"><code>ssh-keygen -t rsa -C "你的邮箱"</code></a> ，它会有三次等待你输入，直接回车即可。<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214640930-1505693290.png" alt="" loading="lazy" class="medium-zoom-image"><br>
+将生成的ssh key复制到剪贴板，执行 <code>clip &lt; ~/.ssh/id_rsa.pub</code> （或者到上图提示的路径里去打开文件并复制）：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214651414-743953505.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+</li>
+<li>
+<p>打开Github，进入Settings：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214703352-921010313.png" alt="" loading="lazy"><br>
+点击左边的 <code>SSH and GPG keys</code> ，将ssh key粘贴到右边的Key里面。Title随便命名即可。<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214714492-1086473957.png" alt="" loading="lazy" class="medium-zoom-image"><br>
+点击下面的 <code>Add SSH key</code> 就添加成功了。<br>
+测试一下吧，执行 <code>ssh -T git@github.com</code> ：<br>
+<img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214732274-152795627.png" alt="" loading="lazy" class="medium-zoom-image"><br>
+嗯，这样就成功了！</p>
+<p>注：</p>
+<ul>
+<li>对于 oschina 的 “码云” ，执行 <code>ssh -T git@git.oschina.net</code></li>
+<li>对于 coding 的 “码市” ，执行 <code>ssh -T git@git.coding.net</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="2）创建远程仓库并与本地关联">2）创建远程仓库并与本地关联</h3>
+<ol>
+<li>
+<p>创建远程仓库<br>
+首先是在右上角点击进入创建界面：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214751961-141228472.png" alt="" loading="lazy"></p>
+<p>接着输入远程仓库名：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214801899-1730149221.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>点击 <code>Create repository</code> 就创建好了。其他选项可以暂时不管。</p>
+</li>
+<li>
+<p>将远程仓库和本地仓库关联起来</p>
+<p>先到Github上复制远程仓库的SSH地址：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214816680-697003144.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>有两种方式可以关联，一种是SSH，一种是HTTPS。由于<strong>HTTPS比较慢</strong>，所以推荐使用SSH。<br>
+注意SSH的地址格式是这样开头的： <code>git@github.com</code></p>
+<p>运行 <a name="remote_add"><code>git remote add origin 你复制的地址</code></a> ：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214829571-1197635501.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。你需要先执行 <code>git pull origin master</code>。</p>
+<p>执行 <a name="push_origin"><code>git push -u origin master</code></a> 将本地仓库上传至Github的仓库并进行关联：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214838133-1236297143.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+</li>
+</ol>
+<p>关联已经完成！</p>
+<p>以后想在commit后同步到Github上，只要直接执行 <a name="push"><code>git push</code></a> 就行啦：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214848133-733016980.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>可以在Github上看到修改：</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214855602-1059095970.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<hr>
+<p><a name="team"></a></p>
+<h2 id="六、团队合作开发">六、团队合作开发</h2>
+<p>关于团队合作开发，我在之前已经专门用一篇文章来说明了。<br>
+原文链接： <a href="http://www.cnblogs.com/schaepher/p/4933873.html" target="_blank">GitHub团队项目合作流程</a></p>
+<p>上文的目录：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#first">零、前期准备</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#second">一、创建开发分支</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#third">二、Fork项目到个人的仓库</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#four">三、Clone项目到本地</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#five">四、和团队项目保持同步</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#six">五、push修改到自己的项目上</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#seven">六、请求合并到团队项目上</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4933873.html#eight">七、团队项目负责人审核及同意合并请求</a></li>
+</ul>
+<p>其中 <code>零、一、七</code> 是由团队项目负责人来完成的。</p>
+<hr>
+<p><a name="others"></a></p>
+<h2 id="七、github的其他介绍">七、Github的其他介绍</h2>
+<h3 id="1）获取其他人的远程仓库">1）获取其他人的远程仓库</h3>
+<p>看到别人的代码，想要获取到本地计算机慢慢研究或者修改，可以用Git将其下载下来。<br>
+以我和一位同学合作的仓库为例，链接：<a href="https://github.com/schaepher/blogsbackup" target="_blank">schaepher/blogsbackup</a></p>
+<blockquote>
+<p>这是我们用来备份博客园博客的一个小程序，主要用于助教备份学生的博客。</p>
+</blockquote>
+<ol>
+<li>
+<p>复制别人远程仓库的SSH。方法和上面关联git一样，进入仓库页面后，就能找到SSH地址。</p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214904539-240211117.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+</li>
+<li>
+<p>执行 <a name="clone"><code>git clone 复制的SSH地址</code></a></p>
+<p><img src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20160604214911899-487998689.png" alt="" loading="lazy" class="medium-zoom-image"></p>
+<p>整个项目42M，花了点时间才clone下来。</p>
+</li>
+</ol>
+<p>有一点要注意：这样直接clone别人的仓库后，不能push上自己的修改。</p>
+<h3 id="2）另一种关联远程空仓库的方法">2）另一种关联远程空仓库的方法</h3>
+<p>在知道了clone之后，你就可以更简单的创建并关联一个空仓库了。</p>
+<ol>
+<li>在Github上创建仓库，上面有提到，这里不多讲</li>
+<li>复制刚才创建的仓库的SSH</li>
+<li>clone到本地</li>
+</ol>
+<p>这样可以不用再做关联了。省去了上面的 <code>init</code> 和 <code>git remote add origin</code> 以及 <code>git push -u origin master</code> 。</p>
+<h3 id="3）使用github的好处">3）使用GitHub的好处</h3>
+<ul>
+<li>全球最大的同♂性交友网站（逃</li>
+<li>（严肃脸）很多牛逼程序员和牛逼公司的开源项目都放在这上面，有丰富的资源可以学习</li>
+<li>别人（如HR）可以通过你的Github大致了解你的水平。《<a href="http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/" target="_blank">怎样花两年时间去面试一个人</a>》 这篇文章的后面部分讲到了Github</li>
+</ul>
+<hr>
+<p><a name="problem"></a></p>
+<h2 id="八、一些可能碰到的问题">八、一些可能碰到的问题</h2>
+<p>这篇文章基本只介绍主线操作，而在操作过程中，可能有误操作或者其他问题。我把这些问题集中放在另一篇博客里面（这里列出目录）。这样这篇文章不会显得太长。</p>
+<ul>
+<li><a href="http://www.cnblogs.com/schaepher/p/4970291.html#conflict">一、 解决merge时出现的冲突</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4970291.html#back">二、 回退一个merge</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4970291.html#pick">三、 获取某一commit的修改</a></li>
+<li><a href="http://www.cnblogs.com/schaepher/p/4970291.html#push_force">四、 将低版本push到Github（删掉高版本Commit）</a></li>
+</ul>
+<hr>
+
+</div>
+<div id="MySignature">
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.5/cn/"><img alt="知识共享许可协议" style="border-width:0" src="./Git和Github简单教程 - schaepher - 博客园_files/88x31.png"></a><br>本文采用<a rel="license" href="http://creativecommons.org/licenses/by/2.5/cn/">知识共享署名 2.5 中国大陆许可协议</a>进行许可。欢迎转载，演绎或用于商业目的，但是必须保留本文的署名 <a href="https://www.cnblogs.com/schaepher">schaepher</a>（包含链接）。如您有任何疑问或者授权方面的协商，请<a target="_blank" href="https://msg.cnblogs.com/send/schaepher">给我留言</a>。<p></p>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/schaepher/category/771211.html" target="_blank">工具学习笔记</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(5561193,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;595284c7-ff56-e511-b908-9dcfd8948a71&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./Git和Github简单教程 - schaepher - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./Git和Github简单教程 - schaepher - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/schaepher/" target="_blank"><img src="./Git和Github简单教程 - schaepher - 博客园_files/20150915093203.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/schaepher/">schaepher</a><br>
+            <a href="https://home.cnblogs.com/u/schaepher/followees/">关注 - 55</a><br>
+            <a href="https://home.cnblogs.com/u/schaepher/followers/">粉丝 - 270</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;595284c7-ff56-e511-b908-9dcfd8948a71&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(5561193,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">68</span>
+    </div>
+    <div class="buryit" onclick="votePost(5561193,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/schaepher/p/5290084.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/schaepher/p/5290084.html" title="发布于 2016-03-23 14:20">作业评分点</a>
+    <br>
+    <a href="https://www.cnblogs.com/schaepher/p/5592162.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/schaepher/p/5592162.html" title="发布于 2016-06-16 20:59">软工课程实践目录</a>
+
+</div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2016-06-05 17:26</span>&nbsp;
+<a href="https://www.cnblogs.com/schaepher/">schaepher</a>&nbsp;
+阅读(<span id="post_view_count">113012</span>)&nbsp;
+评论(<span id="post_comment_count">34</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5561193" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(5561193);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: &#39;&#39;, targetType: &#39;blogPost&#39;, targetId: &#39;5561193&#39;, targetLink: &#39;https://www.cnblogs.com/schaepher/p/5561193.html&#39;, title: &#39;Git和Github简单教程&#39; })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script src="./Git和Github简单教程 - schaepher - 博客园_files/highlight.min.js.下载" async="" onload="markdown_highlight()"></script>
+<script>
+    var allowComments = true, cb_blogId = 244067, cb_blogApp = 'schaepher', cb_blogUserGuid = '595284c7-ff56-e511-b908-9dcfd8948a71';
+    var cb_entryId = 5561193, cb_entryCreatedDate = '2016-06-05 17:26', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+</script>
+
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/schaepher/p/5561193.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/schaepher/p/5561193.html#top">返回顶部</a></div>
+    <div id="comment_form_container" style="visibility: visible;"><div class="login_tips">
+    登录后才能查看或发表评论，立即 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return account.login(&#39;!comments&#39;);">登录</a> 或者
+    <a href="https://www.cnblogs.com/">逛逛</a> 博客园首页
+</div>
+</div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="https://www.cnblogs.com/cmt/p/15375689.html" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-并行科技&#39;)">【推荐】并行超算云面向博客园粉丝推出“免费算力限时申领”特别活动</a><br><a href="https://cloud.baidu.com/campaign/bccdiscount/index.html?track=cp:bokeyuan|pf:pc|pp:H-bokeyuan-21bccsanqi-neiyewenzilian|pu:21bccsanqi-neiyewenzilian|ci:21bcc|kw:10370321" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-百度智能云&#39;)">【推荐】百度智能云超值优惠：新用户首购云服务器1核1G低至69元/年</a><br><a href="http://www.uccpsoft.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ucancode&#39;)">【推荐】跨平台组态\工控\仿真\CAD 50万行C++源码全开放免费下载！</a><br><a href="https://brands.cnblogs.com/huawei" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-华为专区&#39;)">【推荐】和开发者在一起：华为开发者社区，入驻博客园科技品牌专区</a><br></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+             <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;banner&#39;, &#39;click&#39;, &#39;Pangle-C1&#39;)" target="_blank" rel="nofollow" href="https://c.gridsumdissector.com/r/?gid=gad_545_mzyfo0un&amp;ck=46&amp;adk=566&amp;autorefresh=__AUTOREFRESH__">
+                <img style="width: 300px; height: 250px;" src="./Git和Github简单教程 - schaepher - 博客园_files/35695-20211008160624813-1694591598.jpg" alt="" onload="impressC1()">
+             </a>
+    </div>
+    <div id="under_post_card1"><div class="under-post-card">
+<b>编辑推荐：</b>
+<br>
+
+· <a href="https://www.cnblogs.com/xiaoxiaotank/p/15391905.html" target="_blank">理解ASP.NET Core - 选项(Options) </a>
+    <br>
+· <a href="https://www.cnblogs.com/strick/p/15223931.html" target="_blank">跳槽一年后的回顾</a>
+    <br>
+· <a href="https://www.cnblogs.com/GuyaWeiren/p/15376286.html" target="_blank">在 Unity 中渲染一个黑洞</a>
+    <br>
+· <a href="https://www.cnblogs.com/xiaoxiaotank/p/15367747.html" target="_blank">理解 ASP.NET Core - 配置(Configuration) </a>
+    <br>
+· <a href="https://www.cnblogs.com/coco1s/p/15378659.html" target="_blank">CSS 奇技淫巧 | 妙用 drop-shadow 实现线条光影效果 </a>
+    <br>
+</div></div>
+    <div id="under_post_card2"><div class="itnews under-post-card">
+    <b>最新新闻</b>：
+    <br>
+ ·          <a href="https://news.cnblogs.com/n/703822/" target="_blank">AMD官方庆祝Ryzen诞生5周年以及和英特尔的“失眠症”（2021-10-13 09:34）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/703828/" target="_blank">人工智能65年简史：从麦卡锡到Hinton，人类追求的AI究竟是什么？（2021-10-13 09:16）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/703833/" target="_blank">Facebook 如何修正缔造其成功的算法？（2021-10-13 09:00）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/703832/" target="_blank">摩根大通 CEO 再次称比特币一文不值（2021-10-13 08:55）</a>
+        <br>
+ ·          <a href="https://news.cnblogs.com/n/703831/" target="_blank">Google 研发主管离职加盟斯坦福 AI 研究院（2021-10-13 08:50）</a>
+        <br>
+    » <a href="https://news.cnblogs.com/" title="IT 新闻" target="_blank">更多新闻...</a>
+</div></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem"><!--done-->
+<h3 class="catListTitle">公告</h3>
+
+<div id="blog-news">
+    <img alt="" src="./Git和Github简单教程 - schaepher - 博客园_files/809218-20150920153515570-1159262980.jpg">
+<li>GitHub: <a href="https://github.com/schaepher" target="_blank">Schaepher</a></li>
+<li>更多博客内容见：</li>
+<li><a href="https://schaepher.github.io/" target="_blank">Schaepher's Blog</a></li>
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/schaepher/">
+            schaepher
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/schaepher/" title="入园时间：2015-09-09">
+            6年1个月
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/schaepher/followers/">
+            270
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/schaepher/followees/">
+            55
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;595284c7-ff56-e511-b908-9dcfd8948a71&#39;)">+加关注</a></div>
+        <script>getFollowStatus('595284c7-ff56-e511-b908-9dcfd8948a71');</script>
+    </div>
+</div>
+
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            <div id="widget_my_google" class="div_my_zzk">
+                <input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+<div id="sidebar_shortcut" class="sidebar-block"><div class="catListLink">
+<h3 class="catListTitle">
+常用链接
+</h3>
+<ul>
+    
+<li><a href="https://www.cnblogs.com/schaepher/p/" title="我的博客的随笔列表">我的随笔</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/MyComments.html" title="我的发表过的评论列表">我的评论</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/RecentComments.html" title="我的博客的评论列表">最新评论</a></li>
+<li><a href="https://www.cnblogs.com/schaepher/tag/" title="我的博客的标签列表">我的标签</a></li>
+
+</ul>
+</div>
+
+</div>
+
+<!-- 最新随笔 -->
+
+
+<!-- 我的标签 -->
+
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block"><div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	
+113804
+	</li>
+	<li class="liRank">
+		排名 -	
+9652
+	</li>
+</ul>
+</div>
+
+
+
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+
+    <div id="sidebar_postcategory" class="catListPostCategory sidebar-block">
+        <h3 class="catListTitle">
+            
+随笔分类
+
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/964298.html" rel="" target="">
+    《构建之法》(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/937797.html" rel="" target="">
+    Android(7)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/1670915.html" rel="" target="">
+    C语言(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/966335.html" rel="" target="">
+    Linux/Ubuntu(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/1205640.html" rel="" target="">
+    PHP(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/940223.html" rel="" target="">
+    UML和设计模式(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/771211.html" rel="" target="">
+    工具学习笔记(8)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/957102.html" rel="" target="">
+    集美大学软工助教(26)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/771207.html" rel="" target="">
+    计算机知识(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/837842.html" rel="" target="">
+    面向对象助教(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/837845.html" rel="" target="">
+    其他(15)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/771206.html" rel="" target="">
+    软件工程实践课(20)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/966795.html" rel="" target="">
+    算法与数据结构(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/847979.html" rel="" target="">
+    项目笔记(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/category/1942473.html" rel="" target="">
+    硬件(5)
+</a>
+ 
+                </li>                
+            
+        </ul>
+
+
+    </div>    
+    <div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+        <h3 class="catListTitle">
+            
+随笔档案
+
+
+
+        </h3>
+
+        <ul>
+
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2021/07.html" rel="" target="">
+    2021年7月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2021/04.html" rel="" target="">
+    2021年4月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2021/03.html" rel="" target="">
+    2021年3月(7)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2021/01.html" rel="" target="">
+    2021年1月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2020/05.html" rel="" target="">
+    2020年5月(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2020/04.html" rel="" target="">
+    2020年4月(5)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2020/03.html" rel="" target="">
+    2020年3月(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2018/07.html" rel="" target="">
+    2018年7月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2018/04.html" rel="" target="">
+    2018年4月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/09.html" rel="" target="">
+    2017年9月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/07.html" rel="" target="">
+    2017年7月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/06.html" rel="" target="">
+    2017年6月(5)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/05.html" rel="" target="">
+    2017年5月(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/04.html" rel="" target="">
+    2017年4月(7)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="true" style="display: block">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/03.html" rel="" target="">
+    2017年3月(13)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/02.html" rel="" target="">
+    2017年2月(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2017/01.html" rel="" target="">
+    2017年1月(8)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/11.html" rel="" target="">
+    2016年11月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/10.html" rel="" target="">
+    2016年10月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/09.html" rel="" target="">
+    2016年9月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/08.html" rel="" target="">
+    2016年8月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/07.html" rel="" target="">
+    2016年7月(4)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/06.html" rel="" target="">
+    2016年6月(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/03.html" rel="" target="">
+    2016年3月(3)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2016/02.html" rel="" target="">
+    2016年2月(1)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2015/12.html" rel="" target="">
+    2015年12月(2)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2015/11.html" rel="" target="">
+    2015年11月(5)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2015/10.html" rel="" target="">
+    2015年10月(9)
+</a>
+ 
+                </li>                
+                <li data-category-list-item-visible="false" style="display: none">
+                    
+<a href="https://www.cnblogs.com/schaepher/archive/2015/09.html" rel="" target="">
+    2015年9月(5)
+</a>
+ 
+                </li>                
+            <li>
+                <a href="javascript:void(0)" onclick="sideColumnManager.loadMore(this)">更多</a>
+            </li>
+        </ul>
+
+
+    </div>    
+</div>
+
+<!-- 最新评论 -->
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block"><div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/5561193.html">
+                            1. Git和Github简单教程(112995)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/4823181.html">
+                            2. 练习一：GitHub Desktop下载及使用(59365)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/4933873.html">
+                            3. GitHub团队项目合作流程(40415)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/5934184.html">
+                            4. 用atom写LaTeX文档(12255)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/7533826.html">
+                            5. Vim 插件管理(10783)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/4970291.html">
+                            6. Git的其他用法(9535)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/5011392.html">
+                            7. PHPUnit在Windows下的配置及使用(8479)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/6389032.html">
+                            8. 嵌入AppBar并且带搜索建议的搜索框（Android）(7214)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/12571944.html">
+                            9. 流程引擎为什么选 Camunda(6376)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/schaepher/p/6035165.html">
+                            10. 从“不以人的意志为转移”讲起(5230)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+<!-- 评论排行榜 -->
+
+
+<!-- 推荐排行榜 -->
+<div id="sidebar_topdiggedposts" class="sidebar-block">
+<div id="topdigg_posts_wrap">
+    <div class="catListView">
+        <h3 class="catListTitle">推荐排行榜</h3>
+        <div id="TopDiggPostsBlock">
+            <ul style="word-break: break-all">
+                        <li>
+                            <a href="https://www.cnblogs.com/schaepher/p/5561193.html">
+                                1. Git和Github简单教程(68)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/schaepher/p/4933873.html">
+                                2. GitHub团队项目合作流程(19)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/schaepher/p/4823181.html">
+                                3. 练习一：GitHub Desktop下载及使用(7)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/schaepher/p/5011392.html">
+                                4. PHPUnit在Windows下的配置及使用(6)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnblogs.com/schaepher/p/6680745.html">
+                                5. 记一次失败的面试(5)
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+</div></div></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2021 schaepher
+<br><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8FO3GXnjClZGrNGr2Ic8Z1raDBzCs0nuTTHnmshK2AvihIycuy0O4qQQHnSEOFYmwuHAezRAZzpHF4OUrArgpKTrjcbWzPGAz1iBMVDF_AiZ42qLLy4QbSAspXaLpDBenHM8TwliHy6_pOSAgbP1ShQ">
+
+
+</body></html>

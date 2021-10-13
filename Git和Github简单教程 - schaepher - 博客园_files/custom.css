@@ -1,0 +1,85 @@
+/* 为图片设置阴影 */
+#cnblogs_post_body img {
+  border: 1px solid #BFBFBF;
+  box-shadow: 5px 5px 5px #888888;
+  max-width: 98%;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+}
+
+/* 当鼠标移动到图片上时 
+#cnblogs_post_body img:hover {
+  position: relative;
+  max-width: 150%;
+  z-index:100;
+}*/
+
+/* 为标题设置样式 */
+#cnblogs_post_body h1 {
+  padding-bottom: 4px;
+  border-bottom: 2px solid #999;
+  color: #009FAB;
+  font-family: "黑体", "宋体", "微软雅黑", Arial;
+  font-size: 27px;
+  font-weight: bold;
+  height: 30px;
+  margin: 20px 0 !important;
+  padding: 10px 0 10px 0px;
+  text-shadow: 2px 1px 2px lightgray;
+}
+
+#cnblogs_post_body h2 {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #999;
+  color: #008891;
+  font-family: "黑体", "宋体", "微软雅黑", Arial;
+  font-size: 24px;
+  font-weight: bold;
+  height: 28px;
+  margin: 20px 0 !important;
+  padding: 10px 0 10px 0px;
+  text-shadow: 2px 1px 2px lightgray;
+}
+
+#cnblogs_post_body h3 {
+  padding-bottom: 4px;
+  color: #005359;
+  font-family: "黑体", "宋体", "微软雅黑", Arial;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50%;
+  margin: 20px 0 !important;
+  padding: 10px 0 10px 0px;
+  text-shadow: 2px 1px 2px lightgray;
+}
+
+/* 为链接设置颜色 */
+#cnblogs_post_body a {
+  color: #3D81EE;
+  text-decoration: none;
+}
+
+/* 当鼠标放在链接上面时，修改链接的颜色，并且添加下划线 */
+#cnblogs_post_body a:hover {
+  color: #CC3300;
+  text-decoration: underline;
+}
+
+/* 表头内容强制在一行显示 */
+table th {
+  white-space: nowrap;
+}
+
+/* 表格第一列强制不换行 */
+table td:nth-child(1) {
+  white-space: nowrap;
+}
+
+/* 隐藏扩展内容，避免分散第一次看博客的读者的注意力。 
+ * 使用方法：<span class="hidetext">涂黑的文本</span>
+ */
+
+span.hidetext {
+  background-color: black
+}

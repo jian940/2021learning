@@ -1,0 +1,7 @@
+1.方法和上面关联git一样，进入仓库页面后，就能找到SSH地址。执行 
+git clone 复制的SSH地址
+$ git clone  git@github.com:jian940/2021learning.git
+2.复制远程仓库的SSH
+3.有一点要注意：这样直接clone别人的仓库后，不能push上自己的修改。
+ 
+*******具体操作参考上面的网页连接

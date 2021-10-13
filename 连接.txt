@@ -3,3 +3,8 @@ HTTPS:  https://github.com/jian940/2021learning.git
 
 git remote add origin
 git pull origin master
+
+
+uername：jian940
+paeeword：19941108jian
+email：18810916182@163.com
